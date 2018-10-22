@@ -86,10 +86,14 @@ button.onclick = function(){
 }
 
 
-const predict = (newImage) => {
+const predict = async (newImage) => {
   // const newImage = document.getElementsByClassName('imageToCheck')[0];
   console.log(newImage)
-  const processedImage = tf.fromPixels(newImage);
+  newImage.height = 200;
+  newImage.width = 200;
+
+
+  const processedImage = await tf.fromPixels(newImage);
   const smallImg = tf.image.resizeBilinear(processedImage, [28, 28]);
   const resized = tf.cast(smallImg, 'float32');
   const prediction = model.predict(tf.reshape(resized, shape=[1, 28, 28, 3]));
