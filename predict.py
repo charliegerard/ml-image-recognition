@@ -3,11 +3,10 @@ from keras.preprocessing import image
 import numpy as np
 
 model = load_model('model1.h5')
-new_image = image.load_img('assets/new/circle/circle.png', target_size=(28,28))
+new_image = image.load_img('assets/new/triangle/triangle.png', target_size=(28,28))
 new_image = image.img_to_array(new_image)
 new_image = np.expand_dims(new_image, axis = 0)
 result = model.predict(new_image)
-
 
 print result
 

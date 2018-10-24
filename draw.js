@@ -57,6 +57,8 @@ function redraw(){
   context.strokeStyle = "#000000";
   context.lineJoin = "round";
   context.lineWidth = 5;
+  context.fillStyle = '#ffffff';
+  context.fillRect(0,0,canvas.width, canvas.height);
 
   for(var i=0; i < clickX.length; i++) {
     context.beginPath();
@@ -74,26 +76,24 @@ function redraw(){
 var button = document.getElementById('check-button');
 
 button.onclick = function(){
-  var doodle = canvas.toDataURL('image/png');
+  var doodle = canvas.toDataURL();
 
   var newImageTag = document.getElementsByClassName('imageToCheck')[0];
   newImageTag.src = doodle;
 
-  predict(newImageTag);
+  newImageTag.onload = function(){
+    predict(this);
+  }
 
   resetCanvas();
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-
-const predict = async (newImage) => {
-  // const newImage = document.getElementsByClassName('imageToCheck')[0];
-  console.log(newImage)
+const predict = (newImage) => {
   newImage.height = 200;
   newImage.width = 200;
 
-
-  const processedImage = await tf.fromPixels(newImage);
+  const processedImage = tf.fromPixels(newImage);
   const smallImg = tf.image.resizeBilinear(processedImage, [28, 28]);
   const resized = tf.cast(smallImg, 'float32');
   const prediction = model.predict(tf.reshape(resized, shape=[1, 28, 28, 3]));
@@ -102,3 +102,11 @@ const predict = async (newImage) => {
   const label = prediction.dataSync()[0];
   console.log(label)
 }
+
+// var link = document.createElement('a');
+//     link.innerHTML = 'download image';
+//     link.addEventListener('click', function(ev) {
+//     link.href = canvas.toDataURL();
+//     link.download = "mypainting.png";
+// }, false);
+// document.body.appendChild(link);
