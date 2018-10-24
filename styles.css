@@ -1,4 +1,26 @@
+h1{
+  font-family: "Anonymous Pro", monospace;
+  text-align: center;
+  font-size: 3em;
+}
+
+.app-container{
+  display: block;
+  position: relative;
+  width: 60%;
+  margin : 0 auto;
+  border: 1px solid black;
+  padding: 1em;
+}
+
 canvas{
   border: 1px solid black;
   background: white;
+}
+
+#check-button{
+  background: lightgray;
+  border: none;
+  padding: 1em 2em;
+  margin: 1em 0;
 }
