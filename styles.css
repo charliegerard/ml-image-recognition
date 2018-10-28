@@ -18,71 +18,49 @@ h1{
 
 .app-container{
   display: block;
-  width: 60%;
-  margin : 0 auto;
-  border: 1px solid black;
+  width: 90%;
+  margin : 3em auto 2em auto;
   padding: 1em;
 }
 
 .canvas-container{
-  display: inline-block;
-  width: 40%;
+  display: block;
+  margin: 0 auto;
+  width: auto;
 }
 
-canvas{
-  border: 1px solid black;
+#myCanvas{
+  margin: 0 auto;
+  border: 1px solid grey;
+  border-radius: 5px;
   background: white;
-}
-
-#check-button{
-  background: #ffeb3b;
-  color: black;
-  border: none;
-  padding: 1em 2em;
-  margin: 1em 0;
-  font-size: 14px;
-  position: absolute;
-  bottom: 3em;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Anonymous Pro", monospace;
-}
-
-#clear-button{
-  background: #ffeb3b;
-  color: black;
-  border: none;
-  padding: 1em 2em;
-  margin: 1em 0;
-  font-size: 14px;
-  position: absolute;
-  bottom: 3em;
-  left: 50%;
-  transform: translateX(-180%);
-  font-family: "Anonymous Pro", monospace;
-}
-
-#download-link{
-  background: #ffeb3b;
-  color: black;
-  border: none;
-  padding: 1em 2em;
-  margin: 1em 0;
-  font-size: 14px;
-  position: absolute;
-  bottom: 3em;
-  left: 50%;
-  transform: translateX(65%);
-  font-family: "Anonymous Pro", monospace;
-  text-decoration: none;
 }
 
 .imageToCheck{
   display: none;
 }
 
+.buttons{
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.buttons button, #download-link{
+  background: #ffeb3b;
+  color: black;
+  border: none;
+  padding: 1em 2em;
+  margin: 1em 0;
+  font-size: 14px;
+  bottom: 3em;
+  font-family: "Anonymous Pro", monospace;
+  text-decoration: none;
+}
+
 p.prediction{
-  display: inline-block;
+  display: block;
   font-size: 24px;
-  vertical-align: top;
+  text-align: center;
+  margin-bottom: 2em;
 }

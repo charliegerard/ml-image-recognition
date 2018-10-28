@@ -94,10 +94,9 @@ clearButton.onclick = function(){
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-
 const predict = (newImage) => {
-  newImage.height = 400;
-  newImage.width = 400;
+  newImage.height = 300;
+  newImage.width = 300;
 
   const processedImage = tf.fromPixels(newImage);
   const smallImg = tf.image.resizeBilinear(processedImage, [28, 28]);
@@ -116,10 +115,10 @@ const displayPrediction = label => {
   switch(label){
     case 0:
       // prediction = 'baseball';
-      prediction = 'not willy';
+      prediction = 'Not willy!';
       break;
     case 1:
-      prediction = 'willy';
+      prediction = 'Willy!';
       break;
     default:
       break;
@@ -130,9 +129,7 @@ const displayPrediction = label => {
 }
 
 var link = document.getElementById('download-link');
-    // link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
     link.download = "drawing.png";
 }, false);
-// document.body.appendChild(link);
