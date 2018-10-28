@@ -35,11 +35,13 @@ def crop(file):
   if(width > height):
     difference = width - height
     crop_img = img[top_y:bottom_y+difference, top_x:bottom_x]
+    return crop_img
   elif (height > width):
     difference = height - width
     crop_img = img[top_y:bottom_y, top_x:bottom_x+difference]
+    return crop_img
 
-  return crop_img
+  # return crop_img
 
 for infile in sys.argv[1:]:
   outfile = os.path.splitext(infile)[0]

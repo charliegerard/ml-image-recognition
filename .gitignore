@@ -7,5 +7,7 @@ assets/new/*
 assets/old_sets/*
 assets/test_set/*
 assets/training_set/*
+assets/test_cat/*
+assets/training_cat/*
 .DS_Store
 

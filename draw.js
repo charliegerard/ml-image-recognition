@@ -101,6 +101,12 @@ const predict = (newImage) => {
   // const label = prediction.argMax().dataSync()[0];
   const label = prediction.dataSync()[0];
   console.log(label)
+
+  if(label === 0){
+    console.log('baseball')
+  } else if (label === 1){
+    console.log('willy')
+  }
 }
 
 var link = document.createElement('a');
