@@ -103,10 +103,10 @@ const predict = (newImage) => {
   console.log(label)
 }
 
-// var link = document.createElement('a');
-//     link.innerHTML = 'download image';
-//     link.addEventListener('click', function(ev) {
-//     link.href = canvas.toDataURL();
-//     link.download = "mypainting.png";
-// }, false);
-// document.body.appendChild(link);
+var link = document.createElement('a');
+    link.innerHTML = 'download image';
+    link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+    link.download = "drawing.png";
+}, false);
+document.body.appendChild(link);

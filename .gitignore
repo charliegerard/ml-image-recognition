@@ -1,4 +1,11 @@
 node_modules/
 convert/baseball.npy
+convert/baseball_bat.npy
+convert/cat.npy
+convert/data/
+assets/new/*
+assets/old_sets/*
+assets/test_set/*
+assets/training_set/*
 .DS_Store
 

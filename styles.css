@@ -6,7 +6,6 @@ h1{
 
 .app-container{
   display: block;
-  position: relative;
   width: 60%;
   margin : 0 auto;
   border: 1px solid black;

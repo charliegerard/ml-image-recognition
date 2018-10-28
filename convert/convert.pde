@@ -14,9 +14,9 @@ Screen turns green when done.
 //--------------------------------------
 //USER CHANGEABBLE PARAMETERS
 
-int nr_of_images = 25;                                          //Number of images to extract from dataset
-String output_folder = "baseball";                                  //Name of subfolder to data to place images in /data/rainbow for instance
-String dataset = sketchPath("baseball.npy");        //Path to dataset file (.npy format)
+int nr_of_images = 48;                                          //Number of images to extract from dataset
+String output_folder = "cat";                                  //Name of subfolder to data to place images in /data/rainbow for instance
+String dataset = sketchPath("cat.npy");        //Path to dataset file (.npy format)
 
 
 

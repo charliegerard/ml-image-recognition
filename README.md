@@ -14,6 +14,8 @@
 
 `pip install --upgrade keras`
 
+`pip install opencv-python`
+
 
 ```python
 tensorflowjs_converter \
@@ -32,6 +34,14 @@ python resize.py <name of file>
 ```
 
 * Add the newly resized files to the assets folder
+
+
+### Getting assets from the quickdraw dataset:
+
+* Open the convert.pde file in Processing.
+* Change the name of the samples you want as well as the number.
+* Download the right file from https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap?pli=1
+* Run the file
 
 
 ### Training the model:

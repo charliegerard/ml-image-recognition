@@ -8,6 +8,10 @@ from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import tensorflowjs as tfjs
 
+batch_size_filters = 10
+size_training = 120 #Number of images in training set folder
+size_test = 24 # number of images in test set. Usually 20% of training set.
+
 classifier = Sequential()
 classifier.add(Conv2D(32,(3,3), input_shape = (28,28,3), activation = 'relu'))
 classifier.add(MaxPooling2D(pool_size = (2,2)))
@@ -25,19 +29,19 @@ test_datagen = ImageDataGenerator(rescale = 1./255)
 
 training_set = training_datagen.flow_from_directory('assets/training_set',
 target_size = (28,28),
-batch_size = 20,
+batch_size = batch_size_filters,
 class_mode = 'binary')
 
 test_set = test_datagen.flow_from_directory('assets/test_set',
 target_size = (28,28),
-batch_size = 4,
+batch_size = batch_size_filters,
 class_mode = 'binary')
 
 classifier.fit_generator(training_set,
-steps_per_epoch = 20,
+steps_per_epoch = size_training,
 epochs = 10,
 validation_data = test_set,
-validation_steps = 4)
+validation_steps = size_test)
 
 # # serialize model to JSON
 model_json = classifier.to_json()
@@ -55,15 +59,15 @@ print training_set.class_indices
 
 # # -----------------
 
-from keras.preprocessing import image
+# from keras.preprocessing import image
 
-test_image = image.load_img('assets/new/circle/circle.png',
-target_size = (28,28))
-test_image = image.img_to_array(test_image)
-test_image = np.expand_dims(test_image, axis = 0)
-result = classifier.predict(test_image)
+# test_image = image.load_img('assets/new/circle/circle.png',
+# target_size = (28,28))
+# test_image = image.img_to_array(test_image)
+# test_image = np.expand_dims(test_image, axis = 0)
+# result = classifier.predict(test_image)
 
-print result
+# print result
 
 # #print training_set.class_indices
 
