@@ -10,14 +10,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>The Willy Detector</h1>
-
-  <!-- <img src="assets/new/baseball/24.png" class="image" alt=""> -->
+  <header>
+    <h1>The Willy Detector</h1>
+  </header>
 
   <section class="app-container">
     <div class="canvas-container">
-      <canvas id="myCanvas" width="200" height="200" style="display:block;"></canvas>
-      <button id="check-button">Check for the willies</button>
+      <canvas id="myCanvas" width="400" height="400" style="display:block;"></canvas>
     </div>
     <p class="prediction"></p>
   </section>
@@ -25,6 +24,10 @@
   <!-- <canvas id="myCanvas" width="200" height="200" style="display:block;"></canvas> -->
 
   <img src="" alt="" class="imageToCheck">
+
+  <button id="check-button">Predict</button>
+  <button id="clear-button">Clear</button>
+  <a href="" id="download-link">Download</a>
 
   <!-- <script src="index.js"></script> -->
   <script src="draw.js"></script>

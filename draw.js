@@ -2,7 +2,6 @@ var context = document.getElementsByTagName('canvas')[0].getContext("2d");
 var canvas = document.getElementsByTagName('canvas')[0];
 
 let model;
-
 const modelURL = 'http://localhost:5000/tfjs_model/model.json';
 
 const loadTsfModel = async (modelURL) => {
@@ -43,7 +42,6 @@ canvas.addEventListener('mousemove', function(e){
 canvas.addEventListener('mouseup', function(e){
   paint = false;
 });
-
 
 function addClick(x, y, dragging){
   clickX.push(x);
@@ -89,9 +87,17 @@ button.onclick = function(){
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+var clearButton = document.getElementById('clear-button');
+
+clearButton.onclick = function(){
+  resetCanvas();
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+
 const predict = (newImage) => {
-  newImage.height = 200;
-  newImage.width = 200;
+  newImage.height = 400;
+  newImage.width = 400;
 
   const processedImage = tf.fromPixels(newImage);
   const smallImg = tf.image.resizeBilinear(processedImage, [28, 28]);
@@ -123,10 +129,10 @@ const displayPrediction = label => {
   predictionParagraph.textContent = prediction;
 }
 
-var link = document.createElement('a');
-    link.innerHTML = 'download image';
+var link = document.getElementById('download-link');
+    // link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
     link.download = "drawing.png";
 }, false);
-document.body.appendChild(link);
+// document.body.appendChild(link);

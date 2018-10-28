@@ -1,7 +1,19 @@
-h1{
+body{
+  margin: 0;
   font-family: "Anonymous Pro", monospace;
+}
+
+header{
+  width: 100%;
+  background:#ffeb3b;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+h1{
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
+  margin: 0;
 }
 
 .app-container{
@@ -23,10 +35,46 @@ canvas{
 }
 
 #check-button{
-  background: lightgray;
+  background: #ffeb3b;
+  color: black;
   border: none;
   padding: 1em 2em;
   margin: 1em 0;
+  font-size: 14px;
+  position: absolute;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Anonymous Pro", monospace;
+}
+
+#clear-button{
+  background: #ffeb3b;
+  color: black;
+  border: none;
+  padding: 1em 2em;
+  margin: 1em 0;
+  font-size: 14px;
+  position: absolute;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-180%);
+  font-family: "Anonymous Pro", monospace;
+}
+
+#download-link{
+  background: #ffeb3b;
+  color: black;
+  border: none;
+  padding: 1em 2em;
+  margin: 1em 0;
+  font-size: 14px;
+  position: absolute;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(65%);
+  font-family: "Anonymous Pro", monospace;
+  text-decoration: none;
 }
 
 .imageToCheck{
@@ -35,7 +83,6 @@ canvas{
 
 p.prediction{
   display: inline-block;
-  font-family: "Anonymous Pro", monospace;
   font-size: 24px;
   vertical-align: top;
 }
