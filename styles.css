@@ -12,6 +12,11 @@ h1{
   padding: 1em;
 }
 
+.canvas-container{
+  display: inline-block;
+  width: 40%;
+}
+
 canvas{
   border: 1px solid black;
   background: white;
@@ -24,7 +29,13 @@ canvas{
   margin: 1em 0;
 }
 
-
 .imageToCheck{
   display: none;
+}
+
+p.prediction{
+  display: inline-block;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 24px;
+  vertical-align: top;
 }

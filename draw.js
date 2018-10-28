@@ -102,11 +102,25 @@ const predict = (newImage) => {
   const label = prediction.dataSync()[0];
   console.log(label)
 
-  if(label === 0){
-    console.log('baseball')
-  } else if (label === 1){
-    console.log('willy')
+  displayPrediction(label);
+}
+
+const displayPrediction = label => {
+  let prediction;
+  switch(label){
+    case 0:
+      // prediction = 'baseball';
+      prediction = 'not willy';
+      break;
+    case 1:
+      prediction = 'willy';
+      break;
+    default:
+      break;
   }
+
+  var predictionParagraph = document.getElementsByClassName('prediction')[0];
+  predictionParagraph.textContent = prediction;
 }
 
 var link = document.createElement('a');
