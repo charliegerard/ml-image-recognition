@@ -2,7 +2,7 @@ var context = document.getElementsByTagName('canvas')[0].getContext("2d");
 var canvas = document.getElementsByTagName('canvas')[0];
 
 let model;
-const modelURL = 'http://localhost:5000/tfjs_model/model.json';
+const modelURL = 'tfjs_model/model.json';
 
 const loadTsfModel = async (modelURL) => {
   if (!model) model = await tf.loadModel(modelURL);
