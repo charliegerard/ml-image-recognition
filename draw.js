@@ -95,8 +95,8 @@ clearButton.onclick = function(){
 }
 
 const predict = (newImage) => {
-  newImage.height = 300;
-  newImage.width = 300;
+  newImage.height = 200;
+  newImage.width = 200;
 
   const processedImage = tf.fromPixels(newImage);
   const smallImg = tf.image.resizeBilinear(processedImage, [28, 28]);
@@ -105,7 +105,8 @@ const predict = (newImage) => {
 
   // const label = prediction.argMax().dataSync()[0];
   const label = prediction.dataSync()[0];
-  console.log(label)
+  // const label = prediction.as1D().argMax();
+  console.log('label', label)
 
   displayPrediction(label);
 }

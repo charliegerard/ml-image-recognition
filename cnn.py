@@ -9,7 +9,7 @@ import numpy as np
 import tensorflowjs as tfjs
 
 batch_size_filters = 10
-size_training = 60 #Number of images in training set folder
+size_training = 80 #Number of images in training set folder
 size_test = 12 # number of images in test set. Usually 20% of training set.
 
 classifier = Sequential()
@@ -30,13 +30,13 @@ test_datagen = ImageDataGenerator(rescale = 1./255)
 training_set = training_datagen.flow_from_directory('assets/training_set',
 target_size = (28,28),
 # batch_size = batch_size_filters,
-batch_size = 10,
+batch_size = 20,
 class_mode = 'binary')
 
 test_set = test_datagen.flow_from_directory('assets/test_set',
 target_size = (28,28),
 # batch_size = batch_size_filters,
-batch_size = 2,
+batch_size = 4,
 class_mode = 'binary')
 
 classifier.fit_generator(training_set,
@@ -70,12 +70,11 @@ test_image = np.expand_dims(test_image, axis = 0)
 result = classifier.predict(test_image)
 
 print result
-
 print training_set.class_indices
 
-if result[0][0] == 1:
-  prediction = 'willies'
-elif result[0][0] == 0:
-  prediction = 'baseball'
+# if result[0][0] == 1:
+#   prediction = 'willies'
+# elif result[0][0] == 0:
+#   prediction = 'baseball'
 
-print prediction
+# print prediction

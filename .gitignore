@@ -2,6 +2,9 @@ node_modules/
 convert/baseball.npy
 convert/baseball_bat.npy
 convert/cat.npy
+convert/bicycle.npy
+convert/candle.npy
+drawing.png
 convert/data/
 assets/new/*
 assets/old_sets/*

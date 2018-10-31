@@ -59,8 +59,8 @@ python predict.py
 ```
 
 ## To do:
-* Import quickdraw dataset
-* Add canvas prediction
+- [ ] Add live canvas prediction
+
 - [x] Download some assets from the Google Quickdraw dataset
 
 - [x] Convert .npy files from dataset to png

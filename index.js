@@ -16,12 +16,6 @@ const predict = async (modelURL) => {
   console.log('prediction', prediction)
   const label = prediction.dataSync()[0];
   console.log(label)
-
-  // if(label === 0){
-  //   console.log('circle')
-  // } else if(label === 1){
-  //   console.log('triangle')
-  // }
 }
 
 predict(modelURL);

@@ -34,11 +34,11 @@ def crop(file):
   # Make sure the image cropped is a square
   if(width > height):
     difference = width - height
-    crop_img = img[top_y:bottom_y+difference, top_x:bottom_x]
+    crop_img = img[top_y:bottom_y+difference+10, top_x:bottom_x+10]
     return crop_img
   elif (height > width):
     difference = height - width
-    crop_img = img[top_y:bottom_y, top_x:bottom_x+difference]
+    crop_img = img[top_y:bottom_y+10, top_x:bottom_x+difference+10]
     return crop_img
 
   # return crop_img
@@ -47,8 +47,8 @@ for infile in sys.argv[1:]:
   outfile = os.path.splitext(infile)[0]
   if infile != outfile:
     try:
-      cropped_img = crop(infile)
-      cv2.imwrite(outfile + ".png", cropped_img)
+      # cropped_img = crop(infile)
+      # cv2.imwrite(outfile + ".png", cropped_img)
 
       resized_img = img.open(infile)
       resized_img.thumbnail(size, img.ANTIALIAS)
