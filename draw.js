@@ -84,13 +84,15 @@ button.onclick = function(){
   }
 
   resetCanvas();
-  context.clearRect(0, 0, canvas.width, canvas.height);
+  // context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 var clearButton = document.getElementById('clear-button');
 
 clearButton.onclick = function(){
   resetCanvas();
+  var predictionParagraph = document.getElementsByClassName('prediction')[0];
+  predictionParagraph.textContent = '';
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
